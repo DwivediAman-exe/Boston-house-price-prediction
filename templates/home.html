@@ -7,40 +7,183 @@
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
 
 </head>
 
 <body>
-	<div class="login">
-		<h1>Boston House Price Prediction</h1>
+	<section class="text-gray-600 body-font relative ">
+		<h1 class="sm:text-4xl text-2xl font-large title-font text-center text-gray-900 pt-10">
+			Boston House Price Prediction
+		</h1>
+		<div class="w-full px-10 py-20 flex">
+			<div class=" md:w-1/2 bg-gray-300 rounded-lg overflow-hidden  p-10 flex relative">
 
-		<!-- Main Input For Receiving Query to our ML -->
-		<form action="{{ url_for('predict')}}" method="post">
-			<input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-			<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-			<input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-			<input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-			<input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-			<input type="text" name="RM" placeholder="RM" required="required" /><br>
-			<input type="text" name="Age" placeholder="Age" required="required" /><br>
-			<input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-			<input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-			<input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-			<input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-			<input type="text" name="B" placeholder="B" required="required" /><br>
-			<input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
-			<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-		</form>
+				<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jmklnksf.json" class="m-auto"
+					background="transparent" speed="1" style="width: 90%; height: 100%;" loop autoplay></lottie-player>
 
-		<br>
-		<br>
+			</div>
+			<form action="{{ url_for('predict')}}" method="post" id="myForm" onsubmit="myfunc()"
+				class=" md:w-1/2 bg-white flex w-full flex-wrap justify-center">
+				<div class="relative m-3 w-1/3">
+					<label for="CRIM" class="leading-7 text-sm text-gray-600">CRIM</label>
+					<input type="text" required="required" id="name" name="CRIM"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="ZN" class="leading-7 text-sm text-gray-600">ZN</label>
+					<input type="text" required="required" id="name" name="ZN"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="INDUS" class="leading-7 text-sm text-gray-600">INDUS</label>
+					<input type="text" required="required" id="name" name="INDUS"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="CHAS" class="leading-7 text-sm text-gray-600">CHAS</label>
+					<input type="text" required="required" id="name" name="CHAS"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="NOX" class="leading-7 text-sm text-gray-600">NOX</label>
+					<input type="text" required="required" id="name" name="NOX"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="RM" class="leading-7 text-sm text-gray-600">RM</label>
+					<input type="text" required="required" id="name" name="RM"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="AGE" class="leading-7 text-sm text-gray-600">AGE</label>
+					<input type="text" required="required" id="name" name="AGE"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="DIS" class="leading-7 text-sm text-gray-600">DIS</label>
+					<input type="text" required="required" id="name" name="DIS"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="RAD" class="leading-7 text-sm text-gray-600">RAD</label>
+					<input type="text" required="required" id="name" name="RAD"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="TAX" class="leading-7 text-sm text-gray-600">TAX</label>
+					<input type="text" required="required" id="name" name="TAX"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="PTRATIO" class="leading-7 text-sm text-gray-600">PTRATIO</label>
+					<input type="text" required="required" id="name" name="PTRATIO"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="B" class="leading-7 text-sm text-gray-600">B</label>
+					<input type="text" required="required" id="name" name="B"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+				<div class="relative m-3  w-1/3">
+					<label for="LSTAT" class="leading-7 text-sm text-gray-600">LSTAT</label>
+					<input type="text" required="required" id="name" name="LSTAT"
+						class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
 
+				<button
+					class="w-4/5 mt-5 text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Predict</button>
+			</form>
+		</div>
+		<h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">
+			{{prediction_text}}
+		</h1>
+		</div>
+	</section>
+	<div>
+		<h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-5">
+			Description of the input values
+		</h1>
+		<div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
 
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">CRIM - per capita crime rate by town</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">ZN - proportion of residential land zoned for lots over 25,000
+						sq.ft.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">INDUS - proportion of non-retail business acres per town.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">CHAS - Charles River dummy variable (1 if tract bounds river; 0
+						otherwise)</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">NOX - nitric oxides concentration (parts per 10 million).</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">RM - average number of rooms per dwelling.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">AGE - proportion of owner-occupied units built prior to 1940.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">DIS - weighted distances to five Boston employment centres.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">RAD - index of accessibility to radial highways.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">TAX - full-value property-tax rate per $10,000.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">PTRATIO - pupil-teacher ratio by town.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">B - 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by
+						town.</span>
+				</div>
+			</div>
+			<div class="p-2 sm:w-1/2 w-full">
+				<div class="bg-gray-100 rounded flex p-4 h-full items-center">
+					<span class="title-font font-medium">LSTAT - % lower status of the population.</span>
+				</div>
+			</div>
+		</div>
 	</div>
-	{{prediction_text}}
-
+	<script>
+		function myfunc() {
+			event.preventDefault();
+			document.getElementById("myForm").submit();
+		}
+	</script>
 </body>
 
 </html>
