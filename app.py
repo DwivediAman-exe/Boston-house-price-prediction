@@ -14,7 +14,7 @@ scalar = pickle.load(open('scaling.pkl', 'rb'))
 def home():
 	return render_template('home.html')
 
-
+# for postman cheking
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
 	# parse data from request
@@ -44,6 +44,7 @@ def predict():
 	final_input = scalar.transform(np.array(data).reshape(1, -1))
 	print(final_input)
 	output = regmodel.predict(final_input)[0]
+	
 	return render_template('home.html', prediction_text=f'The predicted house price is : {output}')
 
 
